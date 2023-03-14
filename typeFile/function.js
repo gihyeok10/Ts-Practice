@@ -22,7 +22,7 @@ function 안녕하세요(x) {
 }
 function 숫자세기(x) {
     var num = x.toString().length;
-    return;
+    return 1;
 }
 function 결혼확률(pay, house, atra) {
     var num = 0;
@@ -166,3 +166,20 @@ function slsl(a, b, c) {
     return result2;
 }
 console.log(slsl("010-1111-2222", cutZero, removeDash));
+// html 적용
+var title = document.querySelector("#title");
+// let title = document.querySelector("#title")as Element; 사기
+if (title instanceof Element) {
+    title.innerHTML = "반가워요";
+}
+//네로잉 밥법 instanceof
+var link = document.querySelectorAll(".naver");
+link.forEach(function (a) {
+    if (a instanceof HTMLAnchorElement) {
+        a.href = "https://kakao.com";
+    }
+});
+var btn = document.querySelector("#button");
+btn === null || btn === void 0 ? void 0 : btn.addEventListener("click", function () {
+    console.log("두어개");
+});

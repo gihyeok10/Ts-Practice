@@ -25,7 +25,7 @@ function 안녕하세요(x?: string): void {
 
 function 숫자세기(x: number | string): number {
   let num = x.toString().length;
-  return;
+  return 1;
 }
 
 function 결혼확률(pay: number, house: boolean, atra: string): string | void {
@@ -252,3 +252,23 @@ function slsl(a: string, b: 함수타입1, c: 함수타입2): number {
 }
 
 console.log(slsl("010-1111-2222", cutZero, removeDash));
+
+// html 적용
+let title = document.querySelector("#title");
+// let title = document.querySelector("#title")as Element; 사기
+if (title instanceof Element) {
+  title.innerHTML = "반가워요";
+}
+//네로잉 밥법 instanceof
+let link = document.querySelectorAll(".naver");
+
+link.forEach((a) => {
+  if (a instanceof HTMLAnchorElement) {
+    a.href = "https://kakao.com";
+  }
+});
+
+let btn = document.querySelector("#button");
+btn?.addEventListener("click", function () {
+  console.log("두어개");
+});
