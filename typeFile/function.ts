@@ -164,3 +164,35 @@ let inww: Plus2 = {
   phone: 123123,
   adult: true,
 };
+
+// Literal Types
+
+let 리트럴: "kim";
+// 변수에 kim 밖에 못 들어옴
+let 접니다: "대머리" | "솔로";
+접니다 = "대머리";
+접니다 = "솔로";
+// 변수에 뭐가 들어올지 더 엄격하게 관리가능 (자동완성 힌트)
+
+function 햠수(a: "hello"): 1 | 0 {
+  return 0;
+}
+햠수("hello");
+//함수에도 가능
+
+function rsp(a: "가위" | "바위" | "보"): ("가위" | "바위" | "보")[] {
+  return ["가위"];
+}
+
+// 리트럴 타입 => const 업글버전?
+
+var 자료: { name: "kim" } = {
+  name: "kim",
+};
+
+자료.name;
+
+function 자료함수(a: "kim") {}
+
+// kim이라는 type만 들어올수 있습니다. 고로 자료.name은 못 들어옴.
+내함수(자료.name);
