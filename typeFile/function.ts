@@ -190,9 +190,65 @@ var 자료: { name: "kim" } = {
   name: "kim",
 };
 
-자료.name;
+var 자아료 = {
+  name: "kim",
+} as const;
+
+//as const readonly로 바꿔주고, value값을 그대로 타입으로 지정해줌
 
 function 자료함수(a: "kim") {}
 
-// kim이라는 type만 들어올수 있습니다. 고로 자료.name은 못 들어옴.
+// kim이라는 type만 들어올수 있습니다. 고로 자료.name은 못 들어옴. //저렇게 타입을 kim으로 바꿔주면 가능
 내함수(자료.name);
+
+// 새로운 함수타입 표현방법
+
+type 함수타입 = (a: string) => number;
+
+let 함수타입한거: 함수타입 = function (a) {
+  return 10;
+};
+// 오브젝트안에 함수 타입 지정
+
+type 회원정보타입 = (x: number) => number;
+type 회원정보타입2 = () => void;
+let 회원정보: {
+  name: string;
+  plusOne: 회원정보타입;
+  changeName: 회원정보타입2;
+} = {
+  name: "kim",
+  plusOne(x) {
+    return x + 1;
+  },
+  changeName: () => {
+    console.log("안녕");
+  },
+};
+
+회원정보.plusOne(2);
+회원정보.changeName();
+
+type cutZeroType = (x: string) => string;
+let cutZero: cutZeroType = function (x) {
+  let result = x.replace(/^0+/, "");
+  return result;
+};
+
+type removeDashType = (a: string) => number;
+let removeDash: removeDashType = function (a) {
+  let result = a.replace(/-/g, "");
+  return parseFloat(result);
+};
+
+type 함수타입1 = (x: string) => string;
+type 함수타입2 = (x: string) => number;
+
+function slsl(a: string, b: 함수타입1, c: 함수타입2): number {
+  let result = b(a);
+  let result2 = c(result);
+
+  return result2;
+}
+
+console.log(slsl("010-1111-2222", cutZero, removeDash));

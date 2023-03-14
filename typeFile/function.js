@@ -131,7 +131,38 @@ function rsp(a) {
 var 자료 = {
     name: "kim",
 };
-자료.name;
+var 자아료 = {
+    name: "kim",
+};
+//as const readonly로 바꿔주고, value값을 그대로 타입으로 지정해줌
 function 자료함수(a) { }
-// kim이라는 type만 들어올수 있습니다. 고로 자료.name은 못 들어옴.
+// kim이라는 type만 들어올수 있습니다. 고로 자료.name은 못 들어옴. //저렇게 타입을 kim으로 바꿔주면 가능
 내함수(자료.name);
+var 함수타입한거 = function (a) {
+    return 10;
+};
+var 회원정보 = {
+    name: "kim",
+    plusOne: function (x) {
+        return x + 1;
+    },
+    changeName: function () {
+        console.log("안녕");
+    },
+};
+회원정보.plusOne(2);
+회원정보.changeName();
+var cutZero = function (x) {
+    var result = x.replace(/^0+/, "");
+    return result;
+};
+var removeDash = function (a) {
+    var result = a.replace(/-/g, "");
+    return parseFloat(result);
+};
+function slsl(a, b, c) {
+    var result = b(a);
+    var result2 = c(result);
+    return result2;
+}
+console.log(slsl("010-1111-2222", cutZero, removeDash));
