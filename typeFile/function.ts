@@ -325,3 +325,70 @@ class Word {
 
 let 결과 = new Word("kim", 4444, "nuee", 222, "yue");
 console.log(결과);
+
+// interface 문법
+
+interface Square {
+  color: string;
+  width: number;
+}
+
+let 네모: Square = {
+  color: "red",
+  width: 100,
+};
+
+interface Student {
+  name: string;
+}
+
+interface Teacher extends Student {
+  age: number;
+}
+// extends로 복사가능 interface는 name을 복사했음.
+
+let 학생: Student = { name: "kim" };
+let 선생: Teacher = { name: "kim", age: 20 };
+
+//type과 interface 차이 ==> interface는 중복 선언이 가능.
+
+interface Mange {
+  brand: string;
+  serialNumber: number;
+  model: string[];
+}
+
+let 상품: Mange = {
+  brand: "samsung",
+  serialNumber: 1360,
+  model: ["tv", "phone"],
+};
+
+interface Cart2 {
+  card: boolean;
+}
+interface Cart extends Cart2 {
+  product: string;
+  price: number;
+}
+
+let 장바구니: Cart[] = [
+  { product: "청소기", price: 7000, card: false },
+  { product: "삼다수", price: 800, card: true },
+];
+
+interface Match {
+  plus: (a: number, b: number) => number;
+  minus: (a: number, b: number) => number;
+}
+
+let oj: Match = {
+  plus(a, b) {
+    return a + b;
+  },
+  minus(a, b) {
+    return a - b;
+  },
+};
+
+console.log(oj.plus(4, 6));

@@ -231,3 +231,28 @@ var Word = /** @class */ (function () {
 }());
 var 결과 = new Word("kim", 4444, "nuee", 222, "yue");
 console.log(결과);
+var 네모 = {
+    color: "red",
+    width: 100,
+};
+// extends로 복사가능 interface는 name을 복사했음.
+var 학생 = { name: "kim" };
+var 선생 = { name: "kim", age: 20 };
+var 상품 = {
+    brand: "samsung",
+    serialNumber: 1360,
+    model: ["tv", "phone"],
+};
+var 장바구니 = [
+    { product: "청소기", price: 7000, card: false },
+    { product: "삼다수", price: 800, card: true },
+];
+var oj = {
+    plus: function (a, b) {
+        return a + b;
+    },
+    minus: function (a, b) {
+        return a - b;
+    },
+};
+console.log(oj.plus(4, 6));
