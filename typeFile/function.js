@@ -183,3 +183,51 @@ var btn = document.querySelector("#button");
 btn === null || btn === void 0 ? void 0 : btn.addEventListener("click", function () {
     console.log("두어개");
 });
+// 클래스 맨위에 name을 선언해주고 쓴다.
+var Person2 = /** @class */ (function () {
+    function Person2(a) {
+        this.name = a;
+    }
+    Person2.prototype.함수 = function (a) {
+        console.log("hi eeeee");
+    };
+    return Person2;
+}());
+var 사람1 = new Person2("오코차");
+var 사람2 = new Person2("오코기");
+console.log(사람1);
+var Car = /** @class */ (function () {
+    function Car(a, b) {
+        this.model = a;
+        this.price = b;
+    }
+    Car.prototype.tax = function (a) {
+        return a * 0.2;
+    };
+    return Car;
+}());
+var car1 = new Car("소나타", 3000);
+console.log(car1.tax(car1.price));
+var Word = /** @class */ (function () {
+    function Word() {
+        var param = [];
+        for (var _i = 0; _i < arguments.length; _i++) {
+            param[_i] = arguments[_i];
+        }
+        var 숫자 = [];
+        var 문자 = [];
+        param.forEach(function (item) {
+            if (typeof item === "string") {
+                문자.push(item);
+            }
+            else {
+                숫자.push(item);
+            }
+        });
+        this.num = 숫자;
+        this.str = 문자;
+    }
+    return Word;
+}());
+var 결과 = new Word("kim", 4444, "nuee", 222, "yue");
+console.log(결과);

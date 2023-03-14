@@ -272,3 +272,56 @@ let btn = document.querySelector("#button");
 btn?.addEventListener("click", function () {
   console.log("두어개");
 });
+
+// 클래스 맨위에 name을 선언해주고 쓴다.
+class Person2 {
+  name: string;
+  constructor(a: string) {
+    this.name = a;
+  }
+  함수(a: string) {
+    console.log("hi eeeee");
+  }
+}
+let 사람1 = new Person2("오코차");
+let 사람2 = new Person2("오코기");
+
+console.log(사람1);
+
+class Car {
+  model: string;
+  price: number;
+  constructor(a: string, b: number) {
+    this.model = a;
+    this.price = b;
+  }
+  tax(a: number): number {
+    return a * 0.2;
+  }
+}
+
+let car1 = new Car("소나타", 3000);
+console.log(car1.tax(car1.price));
+
+class Word {
+  num: number[];
+  str: string[];
+
+  constructor(...param) {
+    let 숫자: number[] = [];
+    let 문자: string[] = [];
+
+    param.forEach((item) => {
+      if (typeof item === "string") {
+        문자.push(item);
+      } else {
+        숫자.push(item);
+      }
+    });
+    this.num = 숫자;
+    this.str = 문자;
+  }
+}
+
+let 결과 = new Word("kim", 4444, "nuee", 222, "yue");
+console.log(결과);
