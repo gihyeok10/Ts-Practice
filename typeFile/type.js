@@ -76,3 +76,35 @@ function 자전거와차(x) {
     }
 }
 자전거와차({ wheel: "2개", color: "white" });
+// never 타입
+// 뭔가를 리턴하지 않음 return값이 없어야함
+function never() {
+    throw new Error();
+    // 강제로 에러 내기
+}
+// 퍼블릭 => name 속성을 갖다쓰고 자유롭게 수정가능  -있으나 없으나
+var Users = /** @class */ (function () {
+    function Users(a) {
+        this.familyName = "kim";
+        this.name = this.familyName + a;
+    }
+    //   프로토 타입 함수 라인 앞에 funciton 안붙임
+    Users.prototype.이름변경함수 = function () {
+        this.familyName = "park";
+    };
+    return Users;
+}());
+// private => 자식들 수정 불가능 class 안에서만 사용 조회는 가능한데 수정은x class안에서만 수정이 가능
+// 밖에서 수정하려면? 프로토타입 함수 라인에 변경 함수를 만들어서 사용한다.
+var 유저1 = new Users("민수");
+console.log(유저1.name);
+유저1.이름변경함수();
+console.log(유저1);
+var Persones = /** @class */ (function () {
+    function Persones(name) {
+        this.name = name;
+    }
+    return Persones;
+}());
+var 자식1호 = new Persones("kim혁");
+console.log(자식1호.name);
