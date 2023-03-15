@@ -328,12 +328,12 @@ console.log(결과);
 
 // interface 문법
 
-interface Square {
+interface Square2 {
   color: string;
   width: number;
 }
 
-let 네모: Square = {
+let dowl: Square2 = {
   color: "red",
   width: 100,
 };

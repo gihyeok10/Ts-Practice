@@ -133,3 +133,61 @@ class Persones {
 
 let 자식1호 = new Persones("kim혁");
 console.log(자식1호.name);
+
+class Userlcass {
+  //   static x = 10;
+  //   static => 부모class에만 가능 자식에게는 못 물려줌. extends하면 잘 따라옴 private + static 가능
+  static skill = "js";
+  intro = Userlcass.skill + "전문가 입니다";
+}
+// protected => private랑 비슷 extends할때 protected로 한다면 가능
+
+class NewUser extends Userlcass {}
+let 철수2 = new Userlcass();
+console.log(철수2);
+Userlcass.skill = "ts";
+let 철수3 = new Userlcass();
+console.log(철수3);
+
+// extend로 복붙
+
+class 숙제 {
+  private static x = 10;
+  private y = 20;
+  addOne(a: number): number {
+    let result = 숙제.x + a;
+    return result;
+  }
+  printX() {
+    console.log("x의값은??:", 숙제.x);
+  }
+}
+
+let 철수5 = new 숙제();
+
+console.log(철수5.addOne(5));
+철수5.printX();
+
+class Square {
+  constructor(
+    public width: number,
+    public height: number,
+    public color: string
+  ) {}
+  draw() {
+    let a = Math.random();
+    let square = `<div style="position:relative; 
+        top:${a * 400}px; 
+        left:${a * 400}px; 
+        width:${this.width}px; 
+        height : ${this.height}px; 
+        background:${this.color}"></div>`;
+    document.body.insertAdjacentHTML("beforeend", square);
+  }
+}
+
+let 네모나 = new Square(30, 30, "red");
+네모나.draw();
+네모나.draw();
+네모나.draw();
+네모나.draw();

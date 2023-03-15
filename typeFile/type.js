@@ -1,3 +1,18 @@
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = function (d, b) {
+        extendStatics = Object.setPrototypeOf ||
+            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+            function (d, b) { for (var p in b) if (Object.prototype.hasOwnProperty.call(b, p)) d[p] = b[p]; };
+        return extendStatics(d, b);
+    };
+    return function (d, b) {
+        if (typeof b !== "function" && b !== null)
+            throw new TypeError("Class extends value " + String(b) + " is not a constructor or null");
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
 var __spreadArray = (this && this.__spreadArray) || function (to, from, pack) {
     if (pack || arguments.length === 2) for (var i = 0, l = from.length, ar; i < l; i++) {
         if (ar || !(i in from)) {
@@ -108,3 +123,61 @@ var Persones = /** @class */ (function () {
 }());
 var 자식1호 = new Persones("kim혁");
 console.log(자식1호.name);
+var Userlcass = /** @class */ (function () {
+    function Userlcass() {
+        this.intro = Userlcass.skill + "전문가 입니다";
+    }
+    //   static x = 10;
+    //   static => 부모class에만 가능 자식에게는 못 물려줌. extends하면 잘 따라옴 private + static 가능
+    Userlcass.skill = "js";
+    return Userlcass;
+}());
+// protected => private랑 비슷 extends할때 protected로 한다면 가능
+var NewUser = /** @class */ (function (_super) {
+    __extends(NewUser, _super);
+    function NewUser() {
+        return _super !== null && _super.apply(this, arguments) || this;
+    }
+    return NewUser;
+}(Userlcass));
+var 철수2 = new Userlcass();
+console.log(철수2);
+Userlcass.skill = "ts";
+var 철수3 = new Userlcass();
+console.log(철수3);
+// extend로 복붙
+var 숙제 = /** @class */ (function () {
+    function 숙제() {
+        this.y = 20;
+    }
+    숙제.prototype.addOne = function (a) {
+        var result = 숙제.x + a;
+        return result;
+    };
+    숙제.prototype.printX = function () {
+        console.log("x의값은??:", 숙제.x);
+    };
+    숙제.x = 10;
+    return 숙제;
+}());
+var 철수5 = new 숙제();
+console.log(철수5.addOne(5));
+철수5.printX();
+var Square = /** @class */ (function () {
+    function Square(width, height, color) {
+        this.width = width;
+        this.height = height;
+        this.color = color;
+    }
+    Square.prototype.draw = function () {
+        var a = Math.random();
+        var square = "<div style=\"position:relative; \n        top:".concat(a * 400, "px; \n        left:").concat(a * 400, "px; \n        width:").concat(this.width, "px; \n        height : ").concat(this.height, "px; \n        background:").concat(this.color, "\"></div>");
+        document.body.insertAdjacentHTML("beforeend", square);
+    };
+    return Square;
+}());
+var 네모나 = new Square(30, 30, "red");
+네모나.draw();
+네모나.draw();
+네모나.draw();
+네모나.draw();

@@ -231,7 +231,7 @@ var Word = /** @class */ (function () {
 }());
 var 결과 = new Word("kim", 4444, "nuee", 222, "yue");
 console.log(결과);
-var 네모 = {
+var dowl = {
     color: "red",
     width: 100,
 };
