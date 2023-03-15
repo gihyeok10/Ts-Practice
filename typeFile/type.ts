@@ -59,3 +59,40 @@ function 어레이파라([number, name, boll]: (number | string | boolean)[]) {
 }
 
 어레이파라([10, "와인", true]);
+
+// 다양한 네로잉 typeof로 안될때
+
+function nulldefiend(a: string | undefined) {
+  if (a && typeof a === "string") {
+    // a가 undefined면 이 조건식 자체가 undefined가 됌 if문 실행 x
+  }
+}
+
+type Fish = { swim: string };
+type Bird = { fly: string };
+
+// in을 써서 속성을 파악
+function 동물농장(animal: Fish | Bird) {
+  if ("swim" in animal) {
+    animal.swim;
+  }
+}
+
+type Cars = {
+  wheel: "4개";
+  color: string;
+};
+
+type Bike = {
+  wheel: "2개";
+  color: string;
+};
+
+function 자전거와차(x: Cars | Bike) {
+  if (x.wheel === "4개") {
+    console.log("x는car타입이에요", x);
+  } else {
+    console.log("x는 자전거 타입이에요", x.color);
+  }
+}
+자전거와차({ wheel: "2개", color: "white" });

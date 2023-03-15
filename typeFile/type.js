@@ -55,3 +55,24 @@ function 어레이파라(_a) {
     console.log(number, name, boll);
 }
 어레이파라([10, "와인", true]);
+// 다양한 네로잉 typeof로 안될때
+function nulldefiend(a) {
+    if (a && typeof a === "string") {
+        // a가 undefined면 이 조건식 자체가 undefined가 됌 if문 실행 x
+    }
+}
+// in을 써서 속성을 파악
+function 동물농장(animal) {
+    if ("swim" in animal) {
+        animal.swim;
+    }
+}
+function 자전거와차(x) {
+    if (x.wheel === "4개") {
+        console.log("x는car타입이에요", x);
+    }
+    else {
+        console.log("x는 자전거 타입이에요", x.color);
+    }
+}
+자전거와차({ wheel: "2개", color: "white" });
