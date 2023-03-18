@@ -1,8 +1,8 @@
-function 함수(x: number): number {
+function 함수1(x: number): number {
   return x * 2;
 }
-함수(30);
-함수(90);
+함수1(30);
+함수1(90);
 
 const 함수2 = (x: number): number => {
   return x * 3;
