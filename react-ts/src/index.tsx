@@ -1,11 +1,20 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import React from "react";
+import ReactDOM from "react-dom/client";
+import "./index.css";
+import App from "./App";
+import reportWebVitals from "./reportWebVitals";
 
+function 함수(...x: [number, string]) {
+  console.log("ss");
+}
+
+let arr = [1, 2, 3];
+let arr2: [number, number, ...number[]] = [4, 5, ...arr];
+// 괄호 벗기기 스프레이드 타입지정
+
+함수(1, "ss");
 const root = ReactDOM.createRoot(
-  document.getElementById('root') as HTMLElement
+  document.getElementById("root") as HTMLElement
 );
 root.render(
   <React.StrictMode>

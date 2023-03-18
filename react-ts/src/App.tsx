@@ -5,6 +5,11 @@ import { useState } from "react";
 let 박스: JSX.Element = <div></div>;
 // JSX HTML  요소 타입지정
 
+// array 위치를 고려한 타입 지정
+
+let 멍멍: [string, boolean?] = ["dog", true];
+// ?옵션은 항상 맨 뒤에
+
 function App() {
   let [user, setUser] = useState<string | number>("kim");
   // 제네릭으로 타입 지정.
