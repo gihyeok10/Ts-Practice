@@ -33,3 +33,5 @@ console.log(king);
 
 let 이름: string = "김기";
 type Ageg = number;
+
+// d.ts.파일은 자동으로 글로벌 모듈이 아니므로 export 해줘야함.

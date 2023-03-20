@@ -6,3 +6,4 @@ var king;
 king = 12;
 console.log(king);
 var 이름 = "김기";
+// d.ts.파일은 자동으로 글로벌 모듈이 아니므로 export 해줘야함.
