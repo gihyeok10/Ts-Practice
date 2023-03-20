@@ -2,6 +2,8 @@ import React from "react";
 import logo from "./logo.svg";
 import "./App.css";
 import { useState } from "react";
+import Todo from "./Todo";
+import TodoList from "./TodoList";
 let 박스: JSX.Element = <div></div>;
 // JSX HTML  요소 타입지정
 
@@ -19,6 +21,8 @@ function App() {
     <div className="App">
       <h4>안녕하십니까</h4>
       <Profile name="철수" age="20"></Profile>
+      <Todo></Todo>
+      <TodoList></TodoList>
     </div>
   );
 }

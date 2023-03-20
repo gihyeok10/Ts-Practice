@@ -1,8 +1,8 @@
-function 함수(x) {
+function 함수1(x) {
     return x * 2;
 }
-함수(30);
-함수(90);
+함수1(30);
+함수1(90);
 var 함수2 = function (x) {
     return x * 3;
 };
