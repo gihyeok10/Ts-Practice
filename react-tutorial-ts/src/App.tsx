@@ -1,8 +1,11 @@
 import React from "react";
 import "./App.css";
 import { Greet } from "./components/Greet";
+import { Heading } from "./components/Heading";
+import { Oscar } from "./components/Oscar";
 import { Person } from "./components/Person";
 import { PersonList } from "./components/PersonList";
+import { Status } from "./components/Status";
 function App() {
   const personName = {
     first: "Bruce",
@@ -28,6 +31,11 @@ function App() {
       <Greet name={"와카와카"} meseageCount={20} isLoggedIn={true} />
       <Person name={personName}></Person>
       <PersonList name={nameList}></PersonList>
+      <Status status="loading" />
+      <Heading>PlaceHoleder Text</Heading>
+      <Oscar>
+        <Heading>Oscar goes to Leonardo Dicaprio</Heading>
+      </Oscar>
     </div>
   );
 }
