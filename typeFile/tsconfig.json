@@ -3,6 +3,10 @@
     "lib": ["es6", "dom", "es2017"],
     "target": "ES5",
     "module": "CommonJS",
-    "strictNullChecks": true
+    "strictNullChecks": true,
+    "declaration": true,
+    // 파일마다 d.ts파일이 자동 생성댐
+    "typeRoots": ["./types"]
+    // 특정 d.ts 파일 export 안하고 쓸때
   }
 }

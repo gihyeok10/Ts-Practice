@@ -22,8 +22,14 @@
 // };
 
 // 다른 파일에 있는 변수를 재정의 하는 함수 declare
-import { de } from "./data";
 // 타입 스크립트 끼리는 import export 안해도댐
 
-let 함수 = 123;
-console.log("건너온변수", a + 1);
+// d.ts타입 갖다 쓰기
+import { Age2, Persons } from "./test";
+
+let king: Age2;
+king = 12;
+console.log(king);
+
+let 이름: string = "김기";
+type Ageg = number;
