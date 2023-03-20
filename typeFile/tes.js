@@ -11,3 +11,9 @@ var css = {
         },
     },
 };
+var a2 = "name";
+var ofj = {
+    name: "kim",
+    age: 20,
+};
+console.log(Object.keys(ofj));

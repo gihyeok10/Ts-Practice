@@ -26,3 +26,31 @@ let css: MyCssType = {
     },
   },
 };
+
+// keyof 키워드 /타입 변환기(mapping)
+
+interface Per {
+  age: number;
+  name: string;
+}
+type PersonKeys = keyof Per;
+let a2: PersonKeys = "name";
+let ofj = {
+  name: "kim",
+  age: 20,
+};
+console.log(Object.keys(ofj));
+
+type CarModel = {
+  color: boolean;
+  model: boolean;
+  price: boolean | number;
+};
+
+// 타입 변환
+
+type Changer<MyType> = {
+  [key in keyof MyType]: string;
+};
+
+type 새타입 = Changer<Car>;
